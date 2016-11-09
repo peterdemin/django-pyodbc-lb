@@ -28,7 +28,7 @@ setup(
     packages=['sql_server_lbsm'],
     install_requires=[
         'Django>=1.9.9,<1.10',
-        'sql_server.pyodbc>=1.9.9,<1.10',
+        'django-pyodbc-azure>=1.9.9,<1.10',
     ],
     setup_requires=['wheel'],
     classifiers=CLASSIFIERS,

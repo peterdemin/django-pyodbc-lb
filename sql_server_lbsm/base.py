@@ -34,6 +34,14 @@ class RetryException(Exception):
 
 
 class DatabaseWrapper(BaseDatabaseWrapper):
+    _unrecoverable_error_numbers = (
+        '18456',  # login failed
+        '18486',  # account is locked
+        '18487',  # password expired
+        '18488',  # password should be changed
+        '18452',  # login from untrusted domain
+    )
+
     def get_new_connection(self, conn_params):
         hosts = self.get_mirror_hosts(conn_params)
         connection_strings = [
@@ -60,7 +68,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         while True:
             for connection_string in connection_strings:
                 try:
-                    return self.try_connection(connection_strings, options, retry_time)
+                    return self.try_connection(connection_string, options, retry_time)
                 except RetryException as rexc:
                     if time.time() > end_time:
                         raise rexc.args[0]
