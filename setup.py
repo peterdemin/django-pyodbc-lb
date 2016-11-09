@@ -17,15 +17,15 @@ CLASSIFIERS=[
 ]
 
 setup(
-    name='django-pyodbc-lbsm',
+    name='django-pyodbc-lb',
     version='1.9.9.1',
-    description='Django backend for Microsoft SQL Server with LBSM support',
+    description='Django backend for Microsoft SQL Server with load balancer support',
     long_description=open('README.rst').read(),
     author='Petr Demin',
     author_email='deminp@ncbi.nlm.nih.gov',
-    url='https://github.com/michiya/django-pyodbc-azure',
+    url='https://github.com/peterdemin/django-pyodbc-lb',
     license='BSD',
-    packages=['sql_server_lbsm'],
+    packages=['sql_server_lb'],
     install_requires=[
         'Django>=1.9.9,<1.10',
         'django-pyodbc-azure>=1.9.9,<1.10',
