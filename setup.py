@@ -20,7 +20,7 @@ CLASSIFIERS=[
 
 setup(
     name='django-pyodbc-lb',
-    version='1.11.0.0',
+    version='1.11.0.1',
     description='Django backend for Microsoft SQL Server with load balancer support',
     long_description=open('README.rst').read(),
     author='Petr Demin',
