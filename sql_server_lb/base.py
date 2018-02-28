@@ -35,7 +35,7 @@ class RetryException(Exception):
 
 class DatabaseWrapper(BaseDatabaseWrapper):
     _unrecoverable_error_numbers = (
-        '18456',  # login failed
+        # '18456',  MSSQL sends "login failed" when connecting to restoring replica
         '18486',  # account is locked
         '18487',  # password expired
         '18488',  # password should be changed
